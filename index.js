@@ -19,8 +19,8 @@ inputBtnEl.addEventListener ("click", function(){
 })
 
 onValue(shoutoutsInDB, function(snapshot){
-    let shoutout = Object.value(snapshot.val())
-    shoutoutsDisplay.innerHTML = shoutout
+    let shoutouts = Object.values(snapshot.val())
+    shoutoutsDisplay.innerHTML = shoutouts
 
 })
 
