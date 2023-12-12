@@ -9,6 +9,7 @@ const shoutoutsInDB = ref(database, "shoutouts")
 const shoutoutInputEl = document.querySelector("#main-input-field")
 const inputBtnEl = document.querySelector("#main-input-btn")
 const shoutoutsDisplay = document.querySelector("#shoutouts-list")
+const deleteBtn = document.querySelector("#test-btn")
 
 inputBtnEl.addEventListener ("click", function(){
     let userInputValue = shoutoutInputEl.value
@@ -20,12 +21,25 @@ inputBtnEl.addEventListener ("click", function(){
 
 onValue(shoutoutsInDB, function(snapshot){
     let shoutouts = Object.values(snapshot.val())
-    shoutoutsDisplay.innerHTML = shoutouts
+
+    appendShoutoutList(shoutouts)
 
 })
 
+function appendShoutoutList(input){
+    shoutoutsDisplay.innerHTML = input
 
+}
 
 function clearInputField(){
     shoutoutInputEl.value = ""
+}
+
+deleteBtn.addEventListener ("click", function(){
+    clearShoutoutList()
+})
+
+
+function clearShoutoutList(){
+    shoutoutsDisplay.innerHTML = ""
 }
