@@ -12,7 +12,7 @@ const shoutoutsDisplay = document.querySelector("#shoutouts-list")
 
 inputBtnEl.addEventListener ("click", function(){
     let userInputValue = shoutoutInputEl.value
-
+     
     push(shoutoutsInDB, userInputValue) 
     
     clearInputField()
@@ -20,12 +20,17 @@ inputBtnEl.addEventListener ("click", function(){
 
 onValue(shoutoutsInDB, function(snapshot){
     let shoutouts = Object.values(snapshot.val())
-    
-    appendShoutoutList(shoutouts)
+
+    clearShoutoutList()
+
+    for (let i = 0; i < shoutouts.length; i++){
+        
+        addShoutoutToList(shoutouts[i])
+    }
 
 })
 
-function appendShoutoutList(input){
+function addShoutoutToList(input){
 
     let newShout = document.createElement("li")
     
