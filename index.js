@@ -19,25 +19,36 @@ inputBtnEl.addEventListener ("click", function(){
 })
 
 onValue(shoutoutsInDB, function(snapshot){
-    let shoutouts = Object.values(snapshot.val())
+    let shoutoutsArray = Object.entries(snapshot.val())
 
     clearShoutoutList()
 
-    for (let i = 0; i < shoutouts.length; i++){
-        
-        addShoutoutToList(shoutouts[i])
+    for (let i = 0; i < shoutoutsArray.length; i++){
+        let currentShout = shoutoutsArray[i]
+        let shoutValue = currentShout[1]
+        let shoutID = currentShout[0]
+
+        addRemoveShoutoutToList(currentShout)
     }
 
 })
 
-function addShoutoutToList(input){
+function addRemoveShoutoutToList(input){
+
+    let shoutVal = input[1]
+    let shoutID = input[0]
 
     let newShout = document.createElement("li")
     
-    newShout.innerHTML = input
+    newShout.innerHTML = shoutVal
     
     shoutoutsDisplay.append(newShout)
 
+    newShout.addEventListener("dblclick", function(){
+        let shoutToRemove = ref(database, `shoutouts/${shoutID}`)
+        remove(shoutToRemove)
+    })
+    
 }
 
 function clearInputField(){
