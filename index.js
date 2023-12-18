@@ -9,6 +9,8 @@ const shoutoutsInDB = ref(database, "shoutouts")
 const shoutoutInputEl = document.querySelector("#main-input-field")
 const inputBtnEl = document.querySelector("#main-input-btn")
 const shoutoutsDisplay = document.querySelector("#shoutouts-list")
+// const senderNameEl = document.querySelector("#sender-name")
+// const receivernameEl = document.querySelector("#receiver-name")
 
 inputBtnEl.addEventListener ("click", function(){
     let userInputValue = shoutoutInputEl.value
@@ -19,16 +21,18 @@ inputBtnEl.addEventListener ("click", function(){
 })
 
 onValue(shoutoutsInDB, function(snapshot){
-    let shoutoutsArray = Object.entries(snapshot.val())
+    if (snapshot.exists()){
+        let shoutoutsArray = Object.entries(snapshot.val())
 
-    clearShoutoutList()
+        clearShoutoutList()
 
-    for (let i = 0; i < shoutoutsArray.length; i++){
-        let currentShout = shoutoutsArray[i]
-        let shoutValue = currentShout[1]
-        let shoutID = currentShout[0]
+        for (let i = 0; i < shoutoutsArray.length; i++){
+            let currentShout = shoutoutsArray[i]
 
-        addRemoveShoutoutToList(currentShout)
+            addRemoveShoutoutToList(currentShout)
+        }
+    } else {
+        shoutoutsDisplay.innerHTML = "Nothing to display"
     }
 
 })
@@ -53,6 +57,8 @@ function addRemoveShoutoutToList(input){
 
 function clearInputField(){
     shoutoutInputEl.value = ""
+    // senderNameEl.value = ""
+    // receivernameEl.value = ""
 }
 
 function clearShoutoutList(){
