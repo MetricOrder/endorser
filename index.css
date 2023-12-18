@@ -1,0 +1,24 @@
+body{
+    background-color: #14213d;
+
+}
+
+h1 {
+    color: #e5e5e5;
+}
+
+textarea{
+    background-color: black;
+    color: #fca311;
+    width: 300px;
+    height: 400px;
+    text-align: center;
+    text-wrap: wrap;
+    resize: none;
+    border: 15px solid #fca311;
+    border-radius: 8px;
+}
+
+ul li{
+    color: red;
+}
