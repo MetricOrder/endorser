@@ -9,8 +9,8 @@ const shoutoutsInDB = ref(database, "shoutouts")
 const shoutoutInputEl = document.querySelector("#main-input-field")
 const inputBtnEl = document.querySelector("#main-input-btn")
 const shoutoutsDisplay = document.querySelector("#shoutouts-list")
-// const senderNameEl = document.querySelector("#sender-name")
-// const receivernameEl = document.querySelector("#receiver-name")
+const senderNameEl = document.querySelector("#sender-name")
+const receivernameEl = document.querySelector("#receiver-name")
 
 inputBtnEl.addEventListener ("click", function(){
     let userInputValue = shoutoutInputEl.value
@@ -57,8 +57,8 @@ function addRemoveShoutoutToList(input){
 
 function clearInputField(){
     shoutoutInputEl.value = ""
-    // senderNameEl.value = ""
-    // receivernameEl.value = ""
+    senderNameEl.value = ""
+    receivernameEl.value = ""
 }
 
 function clearShoutoutList(){
