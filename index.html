@@ -2,18 +2,24 @@
     <head>
         <title>Shout-out!</title>
         <link rel="stylesheet" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>Shout-out!</h1>
-        <!-- <input type="text" id="main-input-field" placeholder="Shout it here!"> -->
-        <textarea placeholder="Shout it here!" id="main-input-field"> </textarea>
-        <!-- <div id="to-from">
-            <input id="sender-name" type="text" placeholder="From:">
-            <input id="receiver-name" type="text" placeholder="To:">
-        </div> -->
-        <button id="main-input-btn">Shout it!</button>
-        <script src="index.js" type="module"></script>
-        <ul id="shoutouts-list">
-        </ul>
+        <div id="main-event">
+            <img src="assets/speaker.png" alt="black and white megaphone">
+            <h1>Shout-out!</h1>
+            <!-- <input type="text" id="main-input-field" placeholder="Shout it here!"> -->
+            <textarea placeholder="Shout it here!" id="main-input-field"></textarea>
+            <div id="to-from">
+                <input class = "small-input" id="sender-name" type="text" placeholder="From">
+                <input class = "small-input" id="receiver-name" type="text" placeholder="To">
+            </div>
+            <button id="main-input-btn">Shout!</button>
+            <script src="index.js" type="module"></script>
+            <ul id="shoutouts-list">
+            </ul>
+        </div>
     </body>
 </html>
