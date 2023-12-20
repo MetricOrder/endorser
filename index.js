@@ -14,8 +14,16 @@ const receivernameEl = document.querySelector("#receiver-name")
 
 inputBtnEl.addEventListener ("click", function(){
     let userInputValue = shoutoutInputEl.value
+    let userFromValue = senderNameEl.value
+    let userToValue = receivernameEl.value
      
-    push(shoutoutsInDB, userInputValue) 
+    push(shoutoutsInDB, `
+    To ${userToValue}<br>
+    <br>
+    ${userInputValue}<br>
+    <br>
+    From ${userFromValue}
+    `)
     
     clearInputField()
 })
