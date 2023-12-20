@@ -18,7 +18,7 @@ inputBtnEl.addEventListener ("click", function(){
     let userToValue = receivernameEl.value
      
     push(shoutoutsInDB, `
-    To ${userToValue}<br>
+    To ${userToValue},<br>
     <br>
     ${userInputValue}<br>
     <br>
