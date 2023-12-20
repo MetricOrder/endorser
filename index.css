@@ -15,7 +15,7 @@ body{
     margin: 0;
     border-radius: 8px;
     background-color: #1B1924;
-    width: 500px;
+    width: 400px;
 }
 
 img {
@@ -24,7 +24,7 @@ img {
     width: 120px;
 }
 
-h1 {
+h1, h2 {
     color: #e5e5e5;
     font-weight: 700;
 }
